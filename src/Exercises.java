@@ -116,11 +116,11 @@ public class Exercises {
             return null;
         }
 
-        int nullCounter = 0;
+        int cuantosNulls = 0;
         ArrayList<String> newList = new ArrayList<String>();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) == null) {
-                nullCounter++;
+                cuantosNulls++;
             } else {
                 newList.add(list.get(i));
             }
@@ -166,7 +166,7 @@ public class Exercises {
             }
         }
 
-        for (int i = 0; i < nullCounter; i++) {
+        for (int i = 0; i < cuantosNulls; i++) {
             newList.add(null);
         }
 
@@ -174,7 +174,25 @@ public class Exercises {
     }
 
     public String[] insertion(String[] list, boolean ascending) {
-        return null;
+        if (list == null) {
+            return null;
+        }
+
+        int cuantosNulls = 0;
+        ArrayList<Integer> newList = new ArrayList<Integer>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == null) {
+                cuantosNulls++;
+            } else {
+                newList.add(list.get(i));
+            }
+        }
+
+        for (int i = 0; i < cuantosNulls; i++) {
+            newList.add(null);
+        }
+
+        return newList;
     }
 
     public int[] selection(int[] list, boolean ascending) {
