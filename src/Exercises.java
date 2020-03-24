@@ -177,7 +177,6 @@ public class Exercises {
         if (list == null) {
             return null;
         }
-
         int cuantosNulls = 0;
         ArrayList<Integer> newList = new ArrayList<Integer>();
         for (int i = 0; i < list.size(); i++) {
@@ -187,11 +186,34 @@ public class Exercises {
                 newList.add(list.get(i));
             }
         }
-
+        if (ascending) {
+            int i = 0;
+            while (i < newList.size()) {
+                int j = i;
+                while (j > 0 && newList.get(j - 1) > newList.get(j)) {
+                    int temp = newList.get(j - 1);
+                    newList.set((j - 1), newList.get(j));
+                    newList.set(j , temp);
+                    j--;
+                }
+                i++;
+            }
+        } else {
+            int i = 0;
+            while (i < newList.size()) {
+                int j = i;
+                while (j > 0 && newList.get(j - 1) < newList.get(j)) {
+                    int temp = newList.get(j - 1);
+                    newList.set((j - 1), newList.get(j));
+                    newList.set(j , temp);
+                    j--;
+                }
+                i++;
+            }
+        }
         for (int i = 0; i < cuantosNulls; i++) {
             newList.add(null);
         }
-
         return newList;
     }
 
