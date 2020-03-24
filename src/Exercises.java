@@ -145,6 +145,25 @@ public class Exercises {
                 }
                 lastIndex--;
             }
+        } else {
+            int lastIndex = newList.size() - 1;
+            boolean switched = true;
+            while (switched) {
+                switched = false;
+                for (int i = 0; i < lastIndex; i++) {
+                    if (newList.get(i) == null) {
+                        newList.add(newList.remove(i));
+                    } else {
+                        if (newList.get(i).compareTo(newList.get(i + 1)) < 0) {
+                            String temp = newList.get(i);
+                            newList.set(i, newList.get(i + 1));
+                            newList.set(i + 1, temp);
+                            switched = true;
+                        }
+                    }
+                }
+                lastIndex--;
+            }
         }
 
         for (int i = 0; i < nullCounter; i++) {
