@@ -260,7 +260,47 @@ public class Exercises {
     }
 //11
     public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
-        return null;
+        if (list == null || list.size() == 0) {return null;}
+
+        if (list.size() > 1) {
+            ArrayList<Integer> list1 = new ArrayList<Integer>();
+            for (int i = 0; i < list.size() / 2; i++) {
+                list1.add(list.get(i));
+            }
+
+            ArrayList<Integer> list2 = new ArrayList<Integer>();
+            for (int i = list.size() / 2; i < list.size(); i++) {
+                list2.add(list.get(i));
+            }
+            list1 = merge(list1, ascending);
+            list2 = merge(list2, ascending);
+            for (int i = 0; i < list.size(); i++) {
+                if (ascending) {
+                    if (list1.size() == 0) {
+                        list.set(i, list2.get(0));
+                        list2.remove(0);
+                    } else if (list2.size() == 0 || list1.get(0) < list2.get(0)) {
+                        list.set(i, list1.get(0));
+                        list1.remove(0);
+                    } else {
+                        list.set(i, list2.get(0));
+                        list2.remove(0);
+                    }
+                } else if (!ascending) {
+                    if (list1.size() == 0) {
+                        list.set(i, list2.get(0));
+                        list2.remove(0);
+                    } else if (list2.size() == 0 || list1.get(0) > list2.get(0)) {
+                        list.set(i, list1.get(0));
+                        list1.remove(0);
+                    } else {
+                        list.set(i, list2.get(0));
+                        list2.remove(0);
+                    }
+                }
+            }
+        }
+        return list;
     }
 //12
     public String[] merge(String[] list, boolean ascending) {
