@@ -237,7 +237,20 @@ public class Exercises {
     }
 //10
     public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-        return null;
+        if (list == null || list.size() == 0) {
+            return null;
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            String minOrMax = list.get(i);
+            int index = i;
+
+            String temp = list.get(i);
+            list.set(i, list.get(index));
+            list.set(index, temp);
+        }
+
+        return list;
     }
 //11
     public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
