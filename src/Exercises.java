@@ -213,19 +213,19 @@ public class Exercises {
         }
         return newList;
     }
-
+//9
     public int[] selection(int[] list, boolean ascending) {
         return null;
     }
-
+//10
     public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
         return null;
     }
-
+//11
     public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
         return null;
     }
-
+//12
     public String[] merge(String[] list, boolean ascending) {
         return null;
     }
