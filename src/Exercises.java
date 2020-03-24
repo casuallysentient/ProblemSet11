@@ -244,6 +244,12 @@ public class Exercises {
         for (int i = 0; i < list.size(); i++) {
             String minOrMax = list.get(i);
             int index = i;
+            for (int j = i; j < list.size(); j++) {
+                if ((ascending && minOrMax.compareTo(list.get(j)) > 0) || (!ascending && minOrMax.compareTo(list.get(j)) < 0)) {
+                    minOrMax = list.get(j);
+                    index = j;
+                }
+            }
 
             String temp = list.get(i);
             list.set(i, list.get(index));
