@@ -215,7 +215,22 @@ public class Exercises {
     }
 //9
     public int[] selection(int[] list, boolean ascending) {
-        return null;
+        if (list == null || list.length == 0) {
+            return null;
+        }
+        for (int i = 0; i < list.length; i++) {
+            int minOrMax = list[i];
+            int index = i;
+            for (int j = i; j < list.length; j++) {
+                
+            }
+
+            int temp = list[i];
+            list[i] = list[index];
+            list[index] = temp;
+        }
+
+        return list;
     }
 //10
     public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
