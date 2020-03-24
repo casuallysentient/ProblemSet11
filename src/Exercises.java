@@ -222,7 +222,10 @@ public class Exercises {
             int minOrMax = list[i];
             int index = i;
             for (int j = i; j < list.length; j++) {
-                
+                if ((ascending && minOrMax > list[j]) || (!ascending && minOrMax < list[j])) {
+                    minOrMax = list[j];
+                    index = j;
+                }
             }
 
             int temp = list[i];
