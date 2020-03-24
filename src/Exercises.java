@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+//1
 public class Exercises {
     public int findMe(int[] list, int target) {
         if (list == null || list.length == 0) {
@@ -12,7 +12,7 @@ public class Exercises {
         }
         return -1;
     }
-
+//2
     public int findMe(ArrayList<String> list, String target) {
         if (list == null || list.isEmpty() == true) {
             return -1;
@@ -24,7 +24,7 @@ public class Exercises {
         }
         return -1;
     }
-
+//3
     public int findMeFaster(ArrayList<Integer> list, int target) {
         if (list == null || list.size() == 0) {
             return -1;
@@ -44,7 +44,7 @@ public class Exercises {
         }
         return -1;
     }
-
+//4
     public int findMeFaster(String[] list, String target) {
         if (list == null || list.length == 0) {
             return -1;
@@ -65,7 +65,7 @@ public class Exercises {
         }
         return -1;
     }
-
+//5
     public int[] bubble(int[] list, boolean ascending) {
         if (list == null || list.length == 0) {
 			return null;
@@ -91,7 +91,7 @@ public class Exercises {
 
 		return list;
     }
-
+//6
     public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
         if (list.contains(null) || list == null) {
 			return null;
@@ -110,7 +110,7 @@ public class Exercises {
 		}
 		return list;
     }
-
+//7
     public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
         if (list == null) {
             return null;
@@ -125,7 +125,6 @@ public class Exercises {
                 newList.add(list.get(i));
             }
         }
-
         if (ascending) {
             int lastIndex = newList.size() - 1;
             boolean switched = true;
@@ -165,14 +164,12 @@ public class Exercises {
                 lastIndex--;
             }
         }
-
         for (int i = 0; i < cuantosNulls; i++) {
             newList.add(null);
         }
-
         return newList;
     }
-
+//8
     public String[] insertion(String[] list, boolean ascending) {
         if (list == null) {
             return null;
