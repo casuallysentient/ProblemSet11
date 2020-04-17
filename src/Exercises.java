@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.*;
+
 //1
 public class Exercises {
     public int findMe(int[] list, int target) {
@@ -106,71 +107,12 @@ public class Exercises {
 			}
 		}
 		if (!ascending) {
-			Collections.reverse(list);
+            Collections.reverse(list);
 		}
 		return list;
     }
 //7
     public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-        if (list == null) {
-            return null;
-        }
-
-        int cuantosNulls = 0;
-        ArrayList<String> newList = new ArrayList<String>();
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == null) {
-                cuantosNulls++;
-            } else {
-                newList.add(list.get(i));
-            }
-        }
-        if (ascending) {
-            int lastIndex = newList.size() - 1;
-            boolean switched = true;
-            while (switched) {
-                switched = false;
-                for (int i = 0; i < lastIndex; i++) {
-                    if (newList.get(i) == null) {
-                        newList.add(newList.remove(i));
-                    } else {
-                        if (newList.get(i).compareTo(newList.get(i + 1)) > 0) {
-                            String temp = newList.get(i);
-                            newList.set(i, newList.get(i + 1));
-                            newList.set(i + 1, temp);
-                            switched = true;
-                        }
-                    }
-                }
-                lastIndex--;
-            }
-        } else {
-            int lastIndex = newList.size() - 1;
-            boolean switched = true;
-            while (switched) {
-                switched = false;
-                for (int i = 0; i < lastIndex; i++) {
-                    if (newList.get(i) == null) {
-                        newList.add(newList.remove(i));
-                    } else {
-                        if (newList.get(i).compareTo(newList.get(i + 1)) < 0) {
-                            String temp = newList.get(i);
-                            newList.set(i, newList.get(i + 1));
-                            newList.set(i + 1, temp);
-                            switched = true;
-                        }
-                    }
-                }
-                lastIndex--;
-            }
-        }
-        for (int i = 0; i < cuantosNulls; i++) {
-            newList.add(null);
-        }
-        return newList;
-    }
-//8
-    public String[] insertion(String[] list, boolean ascending) {
         if (list == null) {
             return null;
         }
@@ -212,6 +154,28 @@ public class Exercises {
             newList.add(null);
         }
         return newList;
+    }
+//8
+    public String[] insertion(String[] list, boolean ascending) {
+        if (list == null || list.length == 0) {return null;}
+        for (int i = 1;  i < list.length; i++) {
+            int x = i;
+            for (int y = i - 1; y >= 0; y--) {
+                if (ascending == true && list[x].compareTo(list[y]) < 0) {
+                    String temp = list[x];
+                    list[x] = list[y];
+                    list[x] = temp;
+                } else if (ascending == false && list[x].compareTo(list[y]) > 0) {
+                    String temp = list[x];
+                    list[x] = list[y];
+                    list[y] = temp;
+                } else {
+                    break;
+                }
+                x--;
+            }
+        }
+        return list;
     }
 //9
     public int[] selection(int[] list, boolean ascending) {
